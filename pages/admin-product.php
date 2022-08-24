@@ -28,7 +28,7 @@ Template::header("Update product");
 
 if ($product == null) : ?>
 
-    <h2>No product</h2>
+    <h2>No product found</h2>
 
 <?php else : ?>
 

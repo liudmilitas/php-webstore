@@ -1,10 +1,10 @@
 <?php
 
 require_once __DIR__ . "/../classes/ProductsDatabase.php";
-
 require_once __DIR__ . "/force-admin.php";
 
 $success = false;
+$products_db = new ProductsDatabase();
 
 
 if(isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["price"]) && isset($_GET["id"])){
@@ -28,10 +28,8 @@ if(isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["price
     $success = move_uploaded_file($_FILES["image"]["tmp_name"], $full_upload_path);
 
     if($success){
-        $product = new Product($_POST["title"], $_POST["description"], $_POST["price"], $full_relative_url);
-
         $products_db = new ProductsDatabase();
-
+        $product = new Product($_POST["title"], $_POST["description"], $_POST["price"], $full_relative_url);
         $success = $products_db->update($product, $_GET["id"]);
     }
 }
