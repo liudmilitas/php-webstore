@@ -65,6 +65,35 @@ class UsersDatabase extends Database{
     }
 
     // update
+
+    public function update($role, $id)
+    {
+        $query = "UPDATE users SET `role` = ? WHERE id = ?";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+
+        $stmt->bind_param("si", $role, $id);
+
+        $success = $stmt->execute();
+
+        return $success;
+    }
+
     // delete
 
+    public function delete($id)
+    {
+        $query = "DELETE FROM users WHERE id = ?";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+
+        $stmt->bind_param("i", $id);
+
+        $success = $stmt->execute();
+
+        return $success;
+    }
+
 }
+
+?>
