@@ -6,21 +6,6 @@ require_once __DIR__ . "/Order.php";
 
 class OrdersDatabase extends Database
 {
-    // create
-
-    public function create(Order $order)
-    {
-        $query = "INSERT INTO orders (`user-id`, `status`, `order-date`) VALUES (?,?,?)";
-
-        $stmt = mysqli_prepare($this->conn, $query);
-
-        $stmt->bind_param("iss", $order->user_id, $order->status, $order->order_date);
-
-        $success = $stmt->execute();
-
-        return $success;
-    }
-
     // get all
 
     public function get_all_orders()
@@ -45,7 +30,7 @@ class OrdersDatabase extends Database
         return $orders;
     }
 
-    // get order by user_id
+    // get one by user id
 
     public function get_order_by_user_id($user_id)
     {
@@ -66,7 +51,7 @@ class OrdersDatabase extends Database
         return $orders;
     }
 
-    // get order by id
+    // get one by id
 
     public function get_order_by_id($id)
     {
@@ -94,6 +79,22 @@ class OrdersDatabase extends Database
         }
 
         return $order;
+    
+    }
+
+    // create
+
+    public function create(Order $order)
+    {
+        $query = "INSERT INTO orders (`user-id`, `status`, `order-date`) VALUES (?,?,?)";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+
+        $stmt->bind_param("iss", $order->user_id, $order->status, $order->order_date);
+
+        $success = $stmt->execute();
+
+        return $success;
     }
 
     // update

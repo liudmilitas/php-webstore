@@ -5,7 +5,7 @@ require_once __DIR__ . "/User.php";
 
 class UsersDatabase extends Database{
     
-    // get_one
+    // get_one_by_username
     
     public function get_one_by_username($username){
         $query = "SELECT * FROM users WHERE username = ?";
