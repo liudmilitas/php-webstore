@@ -75,7 +75,7 @@ class Template
         ?>
             <hr>
             <footer>
-                Это футер
+                WEBSHIN STORE 2022 (c) Liudmila Kazakbaeva
             </footer>
 
             <script src="/php-webstore/assets/script.js"></script>

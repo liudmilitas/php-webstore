@@ -2,16 +2,13 @@
 require_once __DIR__ . "/classes/Template.php";
 
 
-Template::header("Index");
+Template::header("Webshin Store - Homepage");
 ?>
 
-    <h2>Om oss</h2>
+    <h2>About Us</h2>
 
     <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-        Sed provident iste cumque ducimus animi commodi non, similique 
-        iusto quia enim mollitia ab, veritatis nihil eveniet impedit 
-        voluptas tempora quibusdam unde?
+        Get your Official Genshin Impact Merchandise right here! Official merch come from Mihoyo's flagship store.
     </p>
 
     

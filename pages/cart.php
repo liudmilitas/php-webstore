@@ -18,8 +18,8 @@ Template::header("Cart"); ?>
 <?php foreach ($products as $product) : ?>
 
     <div>
-        <b><?= $product->title ?></b>
-        <button data-id="<?= $product->id ?>" class="show-product-details">Show</button>
+        <img src="<?= $product->img_url ?>" alt="<?= $product->title ?>" width="50" height="50">
+        <p><?= $product->title ?> <strong><?= $product->price ?> kr</strong></p>
     </div>
 
 <?php
@@ -27,9 +27,9 @@ Template::header("Cart"); ?>
 endforeach;?>
 
 <br>
-            <input class="cart-button" type="submit" value="Place order">
-        </form>
-        <?php
+            <input class="order-button" type="submit" value="Place order">
+  </form>
+<?php
 Template::footer();
 
 ?>

@@ -26,13 +26,13 @@ Template::header("Order №{$_GET["id"]}", "");
 ?>
 
 
-<!-- 
+
 <div>
     <p>Order id: <?= $order->id ?></p>
     <p>Customer id: <?= $order->user_id ?></p>
     <p>Status: <?= $order->status ?></p>
     <p>Order date: <?= $order->order_date ?></p>
-    <div>Order Products: 
+    <div>Order Products:
     <?php foreach ($products as $product) : ?>
         <div>
             <p>
@@ -40,10 +40,9 @@ Template::header("Order №{$_GET["id"]}", "");
             </p>
             <img src="<?= $product["img-url"] ?>" alt="<?= $product["title"] ?>" width="50" height="50">
         </div>
-    <?php endforeach ?>
+    <?php endforeach; ?>
     </div>
-</div> -->
-
+</div>
 
 <div>
     <?php if ($order->status == "done") : ?>

@@ -2,7 +2,6 @@
 
 require_once __DIR__ . "/Database.php";
 require_once __DIR__ . "/Order.php";
-require_once __DIR__ . "/../classes/ProductsDatabase.php";
 
 
 class OrdersDatabase extends Database
@@ -117,23 +116,24 @@ class OrdersDatabase extends Database
 
     // get all order items
 
-    public function get_all_order_products($id) {
+    public function get_all_order_products($id)
+    {
 
-        $query = "SELECT * FROM `order-products` 
-        JOIN orders ON orders.id = `order-products`.id
-        JOIN products ON products.id = `order-products`.product
-        WHERE `id` = ?";
+        $query = "SELECT * FROM `order-products` as op
+                  JOIN orders ON orders.id = op.id
+                  JOIN products ON products.id = op.product
+                  WHERE orders.id = ?";
 
         $stmt = mysqli_prepare($this->conn, $query);
 
         $stmt->bind_param("i", $id);
-        
+
         $stmt->execute();
-        
+
         $result = $stmt->get_result();
 
         $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        
+
         return $products;
     }
 

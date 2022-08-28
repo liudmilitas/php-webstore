@@ -2,6 +2,7 @@
 
 require_once __DIR__ . "/../classes/Template.php";
 require_once __DIR__ . "/../classes/ProductsDatabase.php";
+require_once __DIR__ . "/../classes/OrdersDatabase.php";
 
 $is_logged_in = isset($_SESSION["user"]);
 $logged_in_user = $is_logged_in ? $_SESSION["user"] : null;
@@ -19,10 +20,6 @@ if (!isset($_GET["id"])) {
 $products_db = new ProductsDatabase();
 
 $product = $products_db->get_one($_GET["id"]);
-
-// if($product == null){
-//     die("No product");
-// }
 
 Template::header("Update product");
 
