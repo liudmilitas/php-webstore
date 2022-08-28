@@ -7,15 +7,16 @@
 
 This app was built as a part of the backend development course at Medieinstitutet (WIE21S).
 
-<strong>Admin credentials</strong><br/>
-Username: admin<br/>
-Password: 1234<br/>
-
 <h2>Key points</h2>
 
 - Object-oriented Programming in PHP
 - User Authentication
 - MySQL database for application storage
+
+<strong>Admin credentials</strong><br/>
+Username: admin<br/>
+Password: 1234<br/>
+
 
 <h2>Credits</h2>
 
