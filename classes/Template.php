@@ -41,7 +41,13 @@ class Template
 
                 <?php elseif ($is_admin) : ?>
                     <a href="/php-webstore/pages/admin.php">Admin area</a>
+                
+
+                <?php elseif ($is_logged_in && !$is_admin) : ?>
+                        <a href="/php-webstore/pages/order.php">My Orders </a>
                 <?php endif; ?>
+
+
             </nav>
 
             <?php if ($is_logged_in) : ?>
@@ -53,7 +59,10 @@ class Template
                     <input type="submit" value="Logout">
                 </form>
                 </p>
+            
             <?php endif; ?>
+
+            
 
             <hr>
 

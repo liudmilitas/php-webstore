@@ -7,6 +7,7 @@ $products = isset($_SESSION["cart"]) ? $_SESSION["cart"] : [];
 
 Template::header("Cart"); ?>
 
+<form class="products-cart-form" action="/php-webstore/scripts/post-place-order.php" method="post">
 <div id="product-details" hidden>
     <img src="" id="product-img" height="50" width="50">
     <p id="product-title"></p>
@@ -23,8 +24,13 @@ Template::header("Cart"); ?>
 
 <?php
 
-endforeach;
+endforeach;?>
 
+<br>
+            <p class="cart-total">Total: kr</p>
+            <input class="cart-button" type="submit" value="Place order">
+        </form>
+        <?php
 Template::footer();
 
 ?>
