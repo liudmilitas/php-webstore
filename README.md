@@ -5,7 +5,11 @@
 <br/>
 <h2>About</h2>
 
-This app was built as a part of the backend development course at Medieinstitutet (WIE21S). 
+This app was built as a part of the backend development course at Medieinstitutet (WIE21S).
+
+<strong>Admin credentials</strong>
+Username: admin
+Password: 1234
 
 <h2>Key points</h2>
 
