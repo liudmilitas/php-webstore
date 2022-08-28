@@ -79,22 +79,39 @@ class OrdersDatabase extends Database
         }
 
         return $order;
-    
+
     }
 
     // create
 
-    public function create(Order $order)
+    public function create(Order $order, $arrayOfOrderProducts)
     {
         $query = "INSERT INTO orders (`user-id`, `status`, `order-date`) VALUES (?,?,?)";
 
         $stmt = mysqli_prepare($this->conn, $query);
 
         $stmt->bind_param("iss", $order->user_id, $order->status, $order->order_date);
-
         $success = $stmt->execute();
 
-        return $success;
+        if ($success ^= 1) {
+            die('Error in create order (1).');
+        }
+        $success = false;
+
+        $order_id = mysqli_insert_id($this->conn);
+
+        foreach ($arrayOfOrderProducts as $product) {
+            mysqli_report(MYSQLI_REPORT_ALL);
+            $query = "INSERT INTO `order-products` (`id`, `product`) VALUES (?, ?)";
+            $stmt = mysqli_prepare($this->conn, $query);
+            $stmt->bind_param("ii", $order_id, $product->product);
+            $success = $stmt->execute();
+            if ($success ^= 1) {
+                die('Error in create order. (2)');
+            }
+        }
+
+        return true;
     }
 
     // update

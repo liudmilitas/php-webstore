@@ -8,9 +8,9 @@ $users_db = new UsersDatabase();
 
 $success = false;
 
-if (isset($_POST["role"]) && isset($_POST["id"])) {
+if (isset($_POST["role"]) && isset($_GET["id"])) {
     $user_role = $_POST["role"];
-    $user_id = $_POST["id"];
+    $user_id = $_GET["id"];
     $success = $users_db->update($user_role, $user_id);
 } else {
     echo "Invalid input";

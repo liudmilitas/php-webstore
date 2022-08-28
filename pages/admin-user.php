@@ -16,10 +16,10 @@ if (!$is_admin) {
 if (!isset($_GET["id"])) {
     die("Invalid input");
 }
+$id = $_GET["id"];
 
-$username = $_GET["username"];
 $users_db = new UsersDatabase();
-$user = $users_db->get_one_by_username($username);
+$user = $users_db->get_one_by_id($id);
 
 
 Template::header("Update user");

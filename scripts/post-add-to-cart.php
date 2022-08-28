@@ -14,20 +14,17 @@ if (isset($_POST["product-id"])) {
 
     // Skapa varukorg om den inte finns
     if (!isset($_SESSION["cart"])) {
-        $_SESSION["cart"] = [];
+        $_SESSION['cart'] = array();
     }
 
     // Lägg produkt i varukorg
     if ($product) {
-        $_SESSION["cart"][] = $product;
+        array_push($_SESSION["cart"], $product);
 
         // Redirecta till produkt-sidan
         header("Location: /php-webstore/pages/products.php");
-        die();
     }
 } else {
     die("Invalid input");
 }
-
-die("Error adding product to cart");
 ?>
