@@ -11,15 +11,15 @@ if(isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["price
 
     $upload_directory = __DIR__ . "/../assets/uploads/"; // C:/wamp64/www/php-webstore/admin-scripts/../assets/uploads/
 
-    $upload_name= basename($_FILES["image"]["name"]); // katt.jpeg
+    $upload_name= basename($_FILES["image"]["name"]);
 
-    $name_parts = explode(".", $upload_name); // ["katt", "jpeg"]
+    $name_parts = explode(".", $upload_name); 
 
-    $file_extension = end($name_parts); // "jpeg"
+    $file_extension = end($name_parts);
 
-    $timestamp = time(); // "16237892"
+    $timestamp = time();
 
-    $file_name = "{$timestamp}.{$file_extension}"; // "16237892.jpeg"
+    $file_name = "{$timestamp}.{$file_extension}";
 
     $full_upload_path = $upload_directory . $file_name; // "C:/wamp64/www/shop/php-webstore/../assets/uploads/16237892.jpeg"
 

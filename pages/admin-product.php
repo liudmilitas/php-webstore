@@ -33,10 +33,10 @@ if ($product == null) : ?>
 <?php else : ?>
 
     <form action="/php-webstore/admin-scripts/post-update-product.php?id=<?= $_GET["id"] ?>" method="post" enctype="multipart/form-data">
-        <input type="text" name="title" placeholder="Title" value="<?= $product->title ?>"> <br>
+        <input type="text" name="title" placeholder="Title" value="<?= $product->title ?>" required> <br>
         <textarea name="description" placeholder="Description"><?= $product->description ?></textarea> <br>
         <input type="number" name="price" placeholder="Price" value="<?= $product->price ?>"> <br>
-        <input type="file" name="image" accept="image/*"> <br>
+        <input type="file" name="image" accept="image/*" required> <br>
         <input type="submit" value="Save">
     </form>
 

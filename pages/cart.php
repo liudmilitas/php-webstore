@@ -27,7 +27,6 @@ Template::header("Cart"); ?>
 endforeach;?>
 
 <br>
-            <p class="cart-total">Total: kr</p>
             <input class="cart-button" type="submit" value="Place order">
         </form>
         <?php
