@@ -7,9 +7,9 @@
 
 This app was built as a part of the backend development course at Medieinstitutet (WIE21S).
 
-<strong>Admin credentials</strong>
-Username: admin
-Password: 1234
+<strong>Admin credentials</strong><br/>
+Username: admin<br/>
+Password: 1234<br/>
 
 <h2>Key points</h2>
 
